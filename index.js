@@ -23,22 +23,25 @@ var updatedLine = value[value.length - 1];
       "https://www.omdbapi.com?t=" + customerMessage + "&apikey=479949eb";
     console.log(url);
     fetch(url)
-      .then(data => return data.json())
-      .then(res => {
-        console.log(JSON.stringify(res));
-        console.log("res called");
-        title.innerHTML = res.Title;
-        year.innerHTML = res.Year;
-        rated.innerHTML = res.Rated;
-        actors.innerHTML = res.Actors;
-        genre.innerHTML = res.Genre;
-        plot.innerHTML = res.Plot;
-      })
-      .catch(function(error) {
-        console.log("Error" + error);
-      });
+      .then(function (response) {
+			return response.json();
+			})
+			.then(function (res) {
+				console.log(res);
+				document.getElementById("Title").innerHTML = res.Title;
+				document.getElementById("Year").innerHTML = res.Year;
+				document.getElementById("Rated").innerHTML = res.Rated;
+				document.getElementById("Actors").innerHTML = res.Actors;
+				document.getElementById("Genre").innerHTML = res.Genre;
+				document.getElementById("Plot").innerHTML = res.Plot;
+	
+			})
+			.catch(function (error) {
+				console.log("Error: " + error);
+			});
   }
 };
+
 var notifyWhenDone = function(err) {
   if (err) {
     // Do something with the error
