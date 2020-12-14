@@ -22,23 +22,19 @@ var updatedLine = value[value.length - 1];
     var url =
       "https://www.omdbapi.com?t=" + customerMessage + "&apikey=479949eb";
     console.log(url);
-    fetch(url)
-      .then(function (response) {
-			return response.json();
-			})
-			.then(function (res) {
-				console.log(res);
-				document.getElementById("Title").innerHTML = res.Title;
-				document.getElementById("Year").innerHTML = res.Year;
-				document.getElementById("Rated").innerHTML = res.Rated;
-				document.getElementById("Actors").innerHTML = res.Actors;
-				document.getElementById("Genre").innerHTML = res.Genre;
-				document.getElementById("Plot").innerHTML = res.Plot;
-	
-			})
-			.catch(function (error) {
-				console.log("Error: " + error);
-			});
+    fetch(url).then(function (response) {
+	return response.json();
+    }).then(function (res) {
+	console.log(res);
+	document.getElementById("Title").innerHTML = res.Title;
+	document.getElementById("Year").innerHTML = res.Year;
+	document.getElementById("Rated").innerHTML = res.Rated;
+	document.getElementById("Actors").innerHTML = res.Actors;
+	document.getElementById("Genre").innerHTML = res.Genre;
+	document.getElementById("Plot").innerHTML = res.Plot;
+	}).catch(function (error) {
+		console.log("Error: " + error);
+	});
   }
 };
 
