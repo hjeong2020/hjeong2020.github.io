@@ -24,8 +24,7 @@ var updatedLine = value[value.length - 1];
     console.log(url);
     fetch(url)
       .then(data => {
-        return data.json(),
-        console.log("fetch is called inside updatedLine")
+        return data.json()
       })
       .then(res => {
         console.log(res);
