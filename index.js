@@ -6,7 +6,7 @@ const actors = document.getElementById("Actors");
 const genre = document.getElementById("Genre");
 const plot = document.getElementById("Plot");
 const errorMessage = document.getElementById("errorMessage");
-
+const pathToData = "chatTranscript.lines";
 
 var updateCallback = function(data) {
   //var chatTranscript = data;
@@ -47,7 +47,7 @@ var notifyWhenDone = function(err) {
     // Do something with the error
     console.log("notifyWhenDone is called: " + err);
   }
-  var pathToData = chatTranscript.lines;
+  var pathToData = "chatTranscript.lines";
   errorMessage.innerHTML = "Data is not fetched due to errors"
 };
 
