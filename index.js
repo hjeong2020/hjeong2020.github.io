@@ -23,11 +23,9 @@ var updatedLine = value[value.length - 1];
       "https://www.omdbapi.com?t=" + customerMessage + "&apikey=479949eb";
     console.log(url);
     fetch(url)
-      .then(data => {
-        return data.json()
-      })
+      .then(data => return data.json())
       .then(res => {
-        console.log(res);
+        console.log(JSON.stringify(res));
         console.log("res called");
         title.innerHTML = res.Title;
         year.innerHTML = res.Year;
