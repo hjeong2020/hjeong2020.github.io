@@ -9,8 +9,8 @@ const errorMessage = document.getElementById("errorMessage");
 
 
 var updateCallback = function(data) {
-  var chatTranscript = data;
-  console.log(chatTranscript);
+  //var chatTranscript = data;
+  //console.log(chatTranscript);
 var value = data.newValue;
   console.log("value is" + JSON.stringify(value));
 var updatedLine = value[value.length - 1];
