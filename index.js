@@ -38,7 +38,7 @@ var updatedLine = value[value.length - 1];
         plot.innerHTML = res.Plot;
       })
       .catch(function(error) {
-        console("Error" + error);
+        console.log("Error" + error);
       });
   }
 };
